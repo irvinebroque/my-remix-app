@@ -1,0 +1,15 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "my-remix-app"
+compatibility_date = "2024-09-25"
+main = "./build/worker/index.js"
+assets = { directory = "./build/client" }
+
+# Workers Logs
+# Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/
+# Configuration: https://developers.cloudflare.com/workers/observability/logs/workers-logs/#enable-workers-logs
+[observability]
+enabled = true
+
+[[kv_namespaces]]
+binding = "MY_NAMESPACE"
+id = "b4f40f140dd44ca1a385cc925b5e884e"
