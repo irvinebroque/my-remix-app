@@ -13,3 +13,6 @@ enabled = true
 [[kv_namespaces]]
 binding = "MY_NAMESPACE"
 id = "b4f40f140dd44ca1a385cc925b5e884e"
+
+[ai]
+binding = "AI"

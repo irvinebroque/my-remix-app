@@ -4,10 +4,10 @@ export async function loader({
     const { env, cf, ctx } = context.cloudflare;
     await env.MY_NAMESPACE.put("bar", "baz")
     const bar = await env.MY_NAMESPACE.get("bar");
-    return new Response(JSON.stringify({ bar }), {
-      status: 200,
-      headers: {
-        "Content-Type": "application/json",
-      },
+
+    const response = await env.AI.run("@cf/meta/llama-3.1-8b-instruct", {
+      prompt: "What is the origin of the phrase Hello, World",
     });
+
+    return response;
   }
